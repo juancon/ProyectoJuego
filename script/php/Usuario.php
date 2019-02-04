@@ -8,10 +8,10 @@ class Usuario {
   private $nivel;
   private $puntuacion;
   
-  function __construct($nombre) {
+  function __construct($nombre, $nivel, $puntuacion) {
     $this->nombre = $nombre;
-    $this->nivel = 0;
-    $this->puntuacion = 0;
+    $this->nivel = $nivel;
+    $this->puntuacion = $puntuacion;
   }
 
   public function getNombre() {
@@ -29,15 +29,9 @@ class Usuario {
   public function insert() {
 
     $conexion = ConexionDB::connectDB();
-    $insercion = "INSERT INTO usuario (nombre, nivel, puntuacion) VALUES (\"".$this->nombre."\", \"".$this->nivel."\", \"".$this->puntuacion."\")";
+    $insercion = "INSERT INTO usuarios (nombre, nivel, puntuacion) VALUES (\"".$this->nombre."\", \"".$this->nivel."\", \"".$this->puntuacion."\")";
     $conexion->exec($insercion);
   }
-
-  /*public function delete() {
-    $conexion = ConexionDB::connectDB();
-    $borrado = "DELETE FROM nivels WHERE nombre=\"".$this->nombre."\"";
-    $conexion->exec($borrado);
-  }*/
 
   public static function getUsuarios() {
     $conexion = ConexionDB::connectDB();
