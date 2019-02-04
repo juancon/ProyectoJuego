@@ -1,6 +1,10 @@
 <?php
 	require_once 'Usuario.php';
 
-	$usuarios = new Usuario("roberto",0,0);
-
-	$usuarios->insert();
+	$busqueda = Usuario::buscarUsuario("salati");
+	if($busqueda == false){
+		$usuario = new Usuario("salati",0,0);
+		$usuario->insert();
+	}else{
+		$usuario = $busqueda;
+	}
