@@ -69,12 +69,12 @@ class Usuario {
 
    public static function buscarUsuario($nombre, $curso) {
     $conexion = ConexionDB::connectDB();
-    $seleccion = "SELECT nombre, nivel, puntuacion FROM usuarios WHERE nombre='".$nombre."' AND curso='".$curso."'";
+    $seleccion = "SELECT nombre, curso, nivel, puntuacion FROM usuarios WHERE nombre='".$nombre."' AND curso='".$curso."'";
     $consulta = $conexion->query($seleccion);
     $consulta->bindColumn(1,$name);
-    $consulta->bindColumn(3,$grade);
-    $consulta->bindColumn(4,$level);
-    $consulta->bindColumn(5,$score);
+    $consulta->bindColumn(2,$grade);
+    $consulta->bindColumn(3,$level);
+    $consulta->bindColumn(4,$score);
     //$nRows = $consulta->fetchColumn();
     $registro = $consulta->fetch(PDO::FETCH_BOUND);
     if($name == $nombre) {
