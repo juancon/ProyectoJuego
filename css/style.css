@@ -29,7 +29,10 @@ h2 {
   margin: 40px 8px 10px 8px; 
   color: #cccccc;
 }
-
+.rojo{
+  color: red;
+  font-weight: bold;
+}
 
 .wrapper {
   /*background-image: url("./img/fondo.jpg");*/

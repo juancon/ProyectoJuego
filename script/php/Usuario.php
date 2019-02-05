@@ -5,17 +5,23 @@ require_once 'ConexionBD.php';
 class Usuario {
 
   private $nombre;
+  private $curso;
   private $nivel;
   private $puntuacion;
   
-  function __construct($nombre, $nivel, $puntuacion) {
+  function __construct($nombre, $curso, $nivel, $puntuacion) {
     $this->nombre = $nombre;
+    $this->curso = $curso;
     $this->nivel = $nivel;
     $this->puntuacion = $puntuacion;
   }
 
   public function getNombre() {
     return $this->nombre;
+  }
+
+  public function getCurso() {
+    return $this->curso;
   }
 
   public function getNivel() {
@@ -36,38 +42,43 @@ class Usuario {
 
   public function insert() {
     $conexion = ConexionDB::connectDB();
-    $insercion = "INSERT INTO usuarios (nombre, nivel, puntuacion) VALUES (\"".$this->nombre."\", ".$this->nivel.", ".$this->puntuacion.")";
+    $insercion = "INSERT INTO usuarios (nombre, curso, nivel, puntuacion) VALUES ('".$this->nombre."', '".$this->curso."', ".$this->nivel.", ".$this->puntuacion.")";
     $conexion->exec($insercion);
   }
 
   public function update() {
     $conexion = ConexionDB::connectDB();
-    $insercion = "UPDATE usuarios SET nivel = ".$this->nivel.", puntucacion = ".$this->puntucacion." WHERE nombre = \"".$this->nombre."\"";
+    $insercion = "UPDATE usuarios SET nivel = ".$this->nivel.", puntucacion = ".$this->puntucacion." WHERE nombre = '".$this->nombre."' AND curso='".$this->curso."'";
     $conexion->exec($insercion);
   }
 
   public static function getUsuarios() {
     $conexion = ConexionDB::connectDB();
-    $seleccion = "SELECT nombre, nivel, puntuacion FROM usuarios";
+    $seleccion = "SELECT nombre, apellido, curso, nivel, puntuacion FROM usuarios";
     $consulta = $conexion->query($seleccion);
     $consulta->bindColumn(1,$name);
-    $consulta->bindColumn(2,$level);
-    $consulta->bindColumn(3,$score);
+    $consulta->bindColumn(2,$grade);
+    $consulta->bindColumn(3,$level);
+    $consulta->bindColumn(4,$score);
     $usuarios = [];
     while ($registro = $consulta->fetch(PDO::FETCH_BOUND)) {
-      $usuarios[] = new Usuario($name, $level, $score);
+      $usuarios[] = new Usuario($name, $grade, $level, $score);
     }
     return $usuarios;
   }
 
-   public static function buscarUsuario($nombre) {
+   public static function buscarUsuario($nombre, $curso) {
     $conexion = ConexionDB::connectDB();
-    $seleccion = "SELECT nombre, nivel, puntuacion FROM usuarios WHERE nombre=\"".$nombre."\"";
+    $seleccion = "SELECT nombre, nivel, puntuacion FROM usuarios WHERE nombre='".$nombre."' AND curso='".$curso."'";
     $consulta = $conexion->query($seleccion);
-    $nRows = $consulta->fetchColumn();
-    if($nRows > 0) {
-      $registro = $consulta->fetchObject();
-      $usuario = new Usuario($registro->nombre, $registro->nivel, $registro->puntuacion);
+    $consulta->bindColumn(1,$name);
+    $consulta->bindColumn(3,$grade);
+    $consulta->bindColumn(4,$level);
+    $consulta->bindColumn(5,$score);
+    //$nRows = $consulta->fetchColumn();
+    $registro = $consulta->fetch(PDO::FETCH_BOUND);
+    if($name == $nombre) {
+      $usuario = new Usuario($name, $grade, $level, $score);
       return $usuario;
     }else{
       return false;

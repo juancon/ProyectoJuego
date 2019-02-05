@@ -23,12 +23,21 @@
       <h1><b>
         EMPIEZA A JUGAR
       </b></h1>
+      <p class="rojo">
+        <?php
+          if(isset($_GET['usuario'])){
+            echo "El usuario ya existe";
+          }
+        ?>
+      </p class="rojo">
       <!-- <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon"/> -->
     </div>
 
     <!-- Login Form -->
     <form action="script/php/iniciarSesion.php" method="post">
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario">
+      <input type="text" id="nombre" class="fadeIn second" name="nombre" placeholder="Nombre" required>
+      <input type="text" id="apellido" class="fadeIn second" name="apellido" placeholder="Apellido" required>
+      <input type="text" id="curso" class="fadeIn second" name="curso" placeholder="Curso" required>
       <input type="submit" class="fadeIn fourth" value="Jugar">
     </form>
 
