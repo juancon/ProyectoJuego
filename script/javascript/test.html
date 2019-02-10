@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+	  // Variables Globales
+		var tiempo = {}; 
+		var clock = 100; // Obtener la fecha y almacenar en clock
+		var intervalo = window.setInterval(mostrar_hora, 1000); // Frecuencia de actualización
+		var i = 0; // Esta variable me ayudará a definir los estados de intervalo
+
+		function mostrar_hora(){
+		 $("div").text(clock--);
+		}
+	</script>
+</head>
+<body>
+	<div onLoad="mostrar_hora()"></div>
+</body>
+</html>
+
