@@ -1,0 +1,25 @@
+.fondo{
+	min-width: 1150px;
+	max-height: 650px;
+	z-index: -99999;
+	position: absolute;
+
+}
+#pregunta{
+	position: relative;
+	text-align: center;
+	margin-bottom: 25%;
+}
+
+#respuestas{
+	position: relative;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.respuesta{
+	border: white solid 4px;
+	margin-right: auto;
+	margin-left: auto;
+}
