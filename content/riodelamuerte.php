@@ -49,13 +49,15 @@
 			<div class="btn" data-toggle="modal" data-target="#historia"><img src="../img/scroll.png" alt="Historia" title="Historia" width="50px" height="50px" class="iconosNav"></div>
       <div id="tiempo">Tiempo: 40</div>
       <div id="puntuacion">Puntuacion: 0</div>
-			<img src="../img/salir.png" alt="Cerrar sesion" title="Cerrar sesión" width="50px" height="50px" class="iconosNav">
+			<a href="../script/php/cerrarSesion.php"><img src="../img/salir.png" alt="Cerrar sesion" title="Cerrar sesión" width="50px" height="50px" class="iconosNav"></a>
 		</nav>
 	</header>
   <section class="container">
     <article class="row">
       <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
         <img class="fondo"  src="../img/riofondo2.jpg">
+        <img class="info" id="bien" src="../img/bien.png">
+        <img class="info" id="mal" src="../img/mal.png">
         <div id="pregunta"></div>
         <div class="row" id="respuestas">
           <div class="respuesta col-md-3 col-sx-3 col-sm-3"></div>

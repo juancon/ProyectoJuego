@@ -28,3 +28,10 @@ body{
 	margin-right: auto;
 	margin-left: auto;
 }
+
+.info{
+	position: absolute;
+	min-width: 250px;
+	max-height: 250px;
+}
+

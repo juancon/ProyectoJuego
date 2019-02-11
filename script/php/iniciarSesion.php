@@ -9,7 +9,8 @@
 	if($busqueda == false){
 		$usuario = new Usuario($nombre,$curso,0,0);
 		$usuario->insert();
-		$_SESSION['usuario'] = $usuario;
+		$_SESSION['usuario'] = serialize($usuario);
+		header("location: ../../content/mapa.php");
 	}else{
 		header("location: ../../index.php?usuario=1");
 	}

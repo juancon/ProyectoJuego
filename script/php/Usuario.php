@@ -37,7 +37,7 @@ class Usuario {
   }
 
   public function setPuntuacion($puntuacion) {
-    $this->puntuacion = $puntuacion;
+    $this->puntuacion += $puntuacion;
   }
 
   public function insert() {
@@ -48,13 +48,13 @@ class Usuario {
 
   public function update() {
     $conexion = ConexionDB::connectDB();
-    $insercion = "UPDATE usuarios SET nivel = ".$this->nivel.", puntucacion = ".$this->puntucacion." WHERE nombre = '".$this->nombre."' AND curso='".$this->curso."'";
+    $insercion = "UPDATE usuarios SET nivel = ".$this->nivel.", puntuacion = ".$this->puntuacion." WHERE nombre = '".$this->nombre."' AND curso='".$this->curso."'";
     $conexion->exec($insercion);
   }
 
   public static function getUsuarios() {
     $conexion = ConexionDB::connectDB();
-    $seleccion = "SELECT nombre, apellido, curso, nivel, puntuacion FROM usuarios";
+    $seleccion = "SELECT nombre, curso, nivel, puntuacion FROM usuarios";
     $consulta = $conexion->query($seleccion);
     $consulta->bindColumn(1,$name);
     $consulta->bindColumn(2,$grade);

@@ -2,18 +2,15 @@ var index = 0;
 var puntuacion = 0;
 var clock = 40; // Obtener la fecha y almacenar en clock
 $(document).ready(function (argument) {
-	start();
+	//start();
 	pintar();
 	tiempo();
+	$(".info").hide();
 	$("#respuestas div").click(function () {
 			var respuesta = $(this).text();
-			comprobar(respuesta);
+			comprobar(respuesta,$(this));
 	})
 })
-
-function start() {
-	$("#pregunta").text("Pulsa START para empezar")
-}
 
 function tiempo() {
 	var intervalo = window.setInterval(mostrar_hora, 1000); // Frecuencia de actualización
@@ -29,6 +26,8 @@ function numeroAleatorio(min, max) {
 }
 
 function pintar(){
+	$("#bien").fadeOut(1000);
+	$("#mal").fadeOut(1000);
 	$.ajax({url: "../script/php/obtenerPreguntas.php", success: function(data){
 		var preguntas = JSON.parse(data);
 		
@@ -60,7 +59,7 @@ function pintarRespuestas(numero,preguntas){
 	}
 }
 
-function comprobar(respuesta) {
+function comprobar(respuesta,div) {
 	$.ajax({url: "../script/php/obtenerPreguntas.php", success: function(data){
 		var preguntas = JSON.parse(data);
 		// alert(event.text);
@@ -71,26 +70,45 @@ function comprobar(respuesta) {
 			puntuacion = puntuacion+(clock*5);
 			if(index < 2){
 				index++;
-				pintar();
+				$("#bien").show();
+				$("#puntuacion").text("Puntuacion: "+puntuacion)
 				clock = 40;
-				$("#puntuacion").text("Puntuacion: "+puntuacion)
+				pintar();
 			}else{
-				alert("Tu puntuacion ha sido de "+puntuacion);
-				$("#puntuacion").text("Puntuacion: "+puntuacion)
+				$("#bien").show();
 				clock = 0;
+				$("#puntuacion").text("Puntuacion: "+puntuacion);
+				finalizar();
 			}
 		}else{
 			console.log("mal")
 			if(index < 2){
 				index++;
-				pintar();
+				$("#mal").show();
 				clock = 40;
+				pintar();
 			}else{
+				$("#mal").show();
 				$("#tiempo").text("Tiempo: 0");
-				alert("Tu puntuacion ha sido de "+puntuacion);
 				clock = 0;
+				finalizar();
 			}
 		}
 
+	}});
+}
+
+function finalizar(){
+	var parametros = {
+			"puntuacion" : $("#puntuacion").text().substring(12),
+			"nivel" : "1"
+		};
+	$.ajax({
+		data:  parametros,
+		url: "../script/php/actualizarPuntuacion.php",
+		method: "POST",
+		success: function(data){
+			alert("Tu puntuacion ha sido de "+puntuacion);
+			window.location.replace("mapa.php");
 	}});
 }
