@@ -69,18 +69,18 @@
         <ul>
           <li>
             <?php
-              if(unserialize($_SESSION["usuario"])->getNivel() > 1){
-                echo "Minijuego Completado";
-              }else{
+              if(unserialize($_SESSION["usuario"])->getNivel() == 0){
                 echo "<a href='riodelamuerte.php'>Minijuego1</a>";
+              }else{
+                echo "Minijuego Completado";
               }
             ?>
           </li>
           <li>
             <?php
-              if(unserialize($_SESSION["usuario"])->getNivel() == 2){
+              if(unserialize($_SESSION["usuario"])->getNivel() == 1){
                 echo "<a href='juego3.html'>Minijuego3</a>";
-              }else if(unserialize($_SESSION["usuario"])->getNivel() < 2){
+              }else if(unserialize($_SESSION["usuario"])->getNivel() < 1){
                 echo "Minijuego No disponible";
               }else{
                 echo "Minijuego Completado";
