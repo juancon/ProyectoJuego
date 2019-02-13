@@ -1,10 +1,10 @@
-body{
-}
+
 .fondo{
-	min-width: 1150px;
-	max-height: 650px;
-	z-index: -99999;
+	/*min-width: 1150px;
+	max-height: 650px;*/
 	position: absolute;
+	z-index: -9999;
+	/*top: 0px;*/
 
 }
 #pregunta{
@@ -34,4 +34,5 @@ body{
 	min-width: 250px;
 	max-height: 250px;
 }
+
 

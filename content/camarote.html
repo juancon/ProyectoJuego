@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src=""></script>
+  <link rel="stylesheet" type="text/css" href="../css/estilosComun.css">
+  <link rel="stylesheet" type="text/css" href="../css/estilosCamarotes.css">
+  <script src="../script/javascript/camarote.js"></script>
+
+
+</head>
+<body>
+	<header class="container-fluid">
+    <nav class="navbar bg-warning">
+      <a class="navbar-brand">Objetos a encontrar:</a>    
+        <div class="breadcrumb-item" id="itemBolsa">Bolsa morada</div>
+      <div class="breadcrumb-item" id="itemEstrella">Estrella de mar</div>
+      <div class="breadcrumb-item" id="itemBotella">Botella verde</div>
+      <div class="breadcrumb-item" id="itemSeta">Seta</div>
+      <p id="tiempo" class="ml-5 mr-5">Tiempo: 30</p>
+      <img src="../img/scroll.png" alt="Historia" title="Historia" width="50px" height="50px" class="iconosNav">
+      <a href="../script/php/cerrarSesion.php"><img src="../img/salir.png" alt="Cerrar sesion" title="Cerrar sesión" width="50px" height="50px" class="iconosNav"></a>
+    </nav>
+  </header>
+  <section class="container">
+    <article class="row">
+      <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+              <section class="row justify-content-center mt-5">
+                <div class="col-md-9">
+                  <!-- Objetos -->
+                  <div id="bolsa" class="d-block"></div>
+                  <div id="estrella" class="d-block"></div>
+                  <div id="botella" class="d-block"></div>
+                  <div id="seta" class="d-block"></div>
+
+                  <!-- Imágen del camarote -->
+                  <img class="w-100 d-block" src="../img/imagen_camarote_2.jpg">
+                </div>
+              </section>
+      </div>
+    </article>
+  </section>
+</body>
+</html>

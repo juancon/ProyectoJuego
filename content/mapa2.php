@@ -17,14 +17,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" type="text/css" href="../css/estilosComun.css">
-  <link rel="stylesheet" type="text/css" href="../css/mapa.css">
   <script type="text/javascript" src="../script/javascript/ranking.js"></script>
+  <!-- <link rel="stylesheet" href="/maps/documentation/javascript/cgc/demos.css"> -->
   
   
 
 </head>
 <body>
-	<header class="container-fluid">
+  <header class="container-fluid">
     <div class="modal fade" id="ranking">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -57,51 +57,21 @@
         </div>
       </div>
     </div>
-		<nav class="navbar">
+    <nav class="navbar">
       <div class="btn" data-toggle="modal" data-target="#ranking"><img src="../img/ranking.png" alt="Ranking" title="Ranking" width="50px" height="50px" class="iconosNav"></div>
       <div id="puntuacion"><?php echo "Puntuación: ".unserialize($_SESSION["usuario"])->getPuntuacion(); ?></div>
       <div id="nivel"><?php echo "Nivel: ".unserialize($_SESSION["usuario"])->getNivel(); ?></div>
-			<a href="../script/php/cerrarSesion.php"><img src="../img/salir.png" alt="Cerrar sesion" title="Cerrar sesión" width="50px" height="50px" class="iconosNav"></a>
-		</nav>
-	</header>
+      <a href="../script/php/cerrarSesion.php"><img src="../img/salir.png" alt="Cerrar sesion" title="Cerrar sesión" width="50px" height="50px" class="iconosNav"></a>
+    </nav>
+  </header>
   <section class="container">
     <article class="row">
       <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-        <ul>
-          <li>
-            <?php
-              if(unserialize($_SESSION["usuario"])->getNivel() == 0){
-                echo "<a href='riodelamuerte.html'>Minijuego1</a>";
-              }else{
-                echo "Minijuego Completado";
-              }
-            ?>
-          </li>
-          <li>
-            <?php
-              if(unserialize($_SESSION["usuario"])->getNivel() == 1){
-                echo "<a href='camarote.html'>Minijuego2</a>";
-              }else if(unserialize($_SESSION["usuario"])->getNivel() < 1){
-                echo "Minijuego No disponible";
-              }else{
-                echo "Minijuego Completado";
-              }
-            ?>
-          </li>
-          <li>
-            <?php
-              if(unserialize($_SESSION["usuario"])->getNivel() == 2){
-                echo "<a href='juego3.html'>Minijuego3</a>";
-              }else if(unserialize($_SESSION["usuario"])->getNivel() < 2){
-                echo "Minijuego No disponible";
-              }else{
-                echo "Minijuego Completado";
-              }
-            ?>
-          </li>
-        </ul>
+        <div id="map"></div>
       </div>
     </article>
   </section>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+  <script type="text/javascript" src="../script/javascript/mapa.js"></script>
 </body>
 </html>

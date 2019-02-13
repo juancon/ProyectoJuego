@@ -1,6 +1,19 @@
 body{
-	background-color: orange;
+	background: #363434;
 }
+header{
+	background: orange;
+}
+
+.modal-header,.modal-footer{
+	background: orange;
+	color: white;
+}
+.modal-body{
+	background: #363434;
+	color: white;
+}
+
 
 #tiempo,#puntuacion,#nivel{
 	color: white;
