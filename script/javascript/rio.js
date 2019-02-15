@@ -14,6 +14,7 @@ $(document).ready(function (argument) {
 			var respuesta = $(this).text();
 			comprobar(respuesta);
 	})
+
 })
 function mostrarHistoria(){
 	jQuery.noConflict();

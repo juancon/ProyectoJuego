@@ -5,9 +5,9 @@
 <html>
 <head>
   <title></title>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src=""></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -15,7 +15,6 @@
 <body>
 
 <!------ Include the above in your HEAD tag ---------->
-<!-- Este es el login -->
 
 <div class="wrapper fadeInDown">
   <div id="formContent">
@@ -41,7 +40,13 @@
     <form action="script/php/iniciarSesion.php" method="post">
       <input type="text" id="nombre" class="fadeIn second" name="nombre" placeholder="Nombre" required>
       <input type="text" id="apellido" class="fadeIn second" name="apellido" placeholder="Apellido" required>
-      <input type="text" id="curso" class="fadeIn second" name="curso" placeholder="Curso" required>
+      <select id="curso" class="fadeIn second" name="curso" required>
+        <option value="1ESO">1º ESO</option>
+        <option value="1BACH">1º BACH</option>
+        <option value="2BACH">2º BACH</option>
+        <option value="MCO-APSD">MCO-APSD</option>
+      </select>
+      <br>
       <input type="submit" class="fadeIn fourth" value="Jugar">
     </form>
 
