@@ -18,6 +18,7 @@ $(document).ready(function (argument) {
 function mostrarHistoria(){
 	jQuery.noConflict();
 	$("#historia").modal('show');
+	inicio();
 }
 function inicio() {
 }
@@ -110,13 +111,16 @@ function comprobar(respuesta,div) {
 		}
 	}});
 
-	if(index == 2){
+	if(index > 1){
 		mostrarPuntuacion();
 	}
 }
+function redi() {
+	
+}
 
 function mostrarPuntuacion() {
-	jQuery.noConflict();
+	//jQuery.noConflict();
 	$("#final").modal('show');
 }
 
