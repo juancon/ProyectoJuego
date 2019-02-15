@@ -1,12 +1,18 @@
 var index = 0;
 var puntuacion = 0;
+controlCierre = 0;
 var clock = 40; // Obtener la fecha y almacenar en clock
 $(document).ready(function (argument) {
 	//start();
-	//mostrarHistoria();
+	mostrarHistoria();
 	pintar();
-	tiempo();
 	$(".info").hide();
+	$(".cerrarHistoria").click(function () {
+		if(controlCierre == 0){
+			controlCierre++;
+			inicio();
+		}
+	});
 	$(".close").click(function () {
 		finalizar();
 	});
@@ -17,11 +23,12 @@ $(document).ready(function (argument) {
 
 })
 function mostrarHistoria(){
-	jQuery.noConflict();
+	//jQuery.noConflict();
 	$("#historia").modal('show');
-	inicio();
+	
 }
 function inicio() {
+	tiempo();
 }
 
 function tiempo() {
