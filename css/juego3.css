@@ -1,77 +1,84 @@
 /* pantalla */
-section{
+/*section{
 	z-index: -1;
 	margin-left: 5%;
 	margin-right: 5%;
-}
+}*/
 #foto{
 	position: absolute;
-	opacity: 0;
-	top: 46%;
+	opacity: 1;
+	top: 49%;
 	left: 21%;
 	z-index: 0;
-	width: 3%;
-	height: 5%;
+	width: 35px;
+	height: 37px;
 	background-color: black;
 	}
 
 @media screen and (max-width: 1024px) {
 	
 	#foto{
-	position: absolute;
-	opacity: 0;
-	top: 50%;
+
+	top: 64%;
 	left: 6%;
-	z-index: 0;
-	width: 3%;
-	height: 5%;
-	background-color: black;
+
 	}
 }
 /*Tablet*/
 @media screen and (max-width: 992px) {
 
 	#foto{
-		position: absolute;
-		opacity: 0;
-		top: 30%;
-		left: 6%;
-		z-index: 0;
-		width: 3%;
-		height: 4%;
-		background-color: black;
+		top: 62%;
+		left: 5%;
+
 		}
 }
 /*Movil tumbado*/
 @media screen and (max-width: 720px) {
  
 #foto{
-	position: absolute;
-	opacity: 0;
-	top: 77%;
+	top: 48%;
 	left: 5%;
-	z-index: 0;
-	width: 6%;
-	height: 7%;
-	background-color: black;
 	}
 }
 /*movil pequeño */
 @media screen and (max-width: 600px) {
  
 #foto{
-	position: absolute;
-	opacity: 0;
-	top: 27%;
-	left: 7%;
-	z-index: 0;
-	width: 5%;
-	height: 5%;
-	background-color: black;
+	top: 51%;
+	left: 6%;
 	}
 }
 
-#tiempo{
-	
+@media screen and (max-width: 400px) {
+ 
+#foto{
+	top: 52%;
+	left: 5%;
+	}
 }
+
+/*@media screen and (max-width: 992px) {
+  #foto{
+
+	top: 27%;
+	left: 7%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+  #foto{
+	top: 27%;
+	left: 7%;
+	}
+}
+
+@media screen and (max-width: 400px) {
+  #foto{
+	top: 27%;
+	left: 7%;
+	}
+}*/
+
+
 
