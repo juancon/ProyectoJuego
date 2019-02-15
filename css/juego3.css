@@ -6,46 +6,27 @@
 }*/
 #foto{
 	position: absolute;
-	opacity: 1;
-	top: 49%;
-	left: 21%;
-	z-index: 0;
+	opacity: 0.5;
+	cursor: pointer;
+	top: 55%;
+	left: 7%;
 	width: 35px;
-	height: 37px;
+	height: 35px;
 	background-color: black;
 	}
-
-@media screen and (max-width: 1024px) {
-	
-	#foto{
-
-	top: 64%;
-	left: 6%;
-
-	}
-}
 /*Tablet*/
 @media screen and (max-width: 992px) {
-
 	#foto{
-		top: 62%;
-		left: 5%;
-
-		}
-}
-/*Movil tumbado*/
-@media screen and (max-width: 720px) {
- 
-#foto{
-	top: 48%;
-	left: 5%;
+		top: 53%;
+		left: 7%;
 	}
 }
+
 /*movil pequeño */
 @media screen and (max-width: 600px) {
  
 #foto{
-	top: 51%;
+	top: 53%;
 	left: 6%;
 	}
 }
@@ -54,7 +35,9 @@
  
 #foto{
 	top: 52%;
-	left: 5%;
+	left: 10%;
+	width: 15px;
+	height: 15px;
 	}
 }
 
