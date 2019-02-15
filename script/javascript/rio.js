@@ -3,20 +3,32 @@ var puntuacion = 0;
 var clock = 40; // Obtener la fecha y almacenar en clock
 $(document).ready(function (argument) {
 	//start();
+	//mostrarHistoria();
 	pintar();
 	tiempo();
 	$(".info").hide();
+	$(".close").click(function () {
+		finalizar();
+	});
 	$("#respuestas div").click(function () {
 			var respuesta = $(this).text();
-			comprobar(respuesta,$(this));
+			comprobar(respuesta);
 	})
 })
+function mostrarHistoria(){
+	jQuery.noConflict();
+	$("#historia").modal('show');
+}
+function inicio() {
+}
 
 function tiempo() {
 	var intervalo = window.setInterval(mostrar_hora, 1000); // Frecuencia de actualización
 	function mostrar_hora(){
-		if(clock >= 0){
+		if(clock > 0){
 			$("#tiempo").text("Tiempo: "+clock--);
+		}else{
+			comprobar("mal");
 		}
 	}
 }
@@ -78,7 +90,8 @@ function comprobar(respuesta,div) {
 				$("#bien").show();
 				clock = 0;
 				$("#puntuacion").text("Puntuacion: "+puntuacion);
-				finalizar();
+				$("#puntuacionFinal").text(puntuacion+" puntos.");
+				//mostrarPuntuacion();
 			}
 		}else{
 			console.log("mal")
@@ -91,11 +104,20 @@ function comprobar(respuesta,div) {
 				$("#mal").show();
 				$("#tiempo").text("Tiempo: 0");
 				clock = 0;
-				finalizar();
+				$("#puntuacionFinal").text(puntuacion+" puntos.");
+				//mostrarPuntuacion();
 			}
 		}
-
 	}});
+
+	if(index == 2){
+		mostrarPuntuacion();
+	}
+}
+
+function mostrarPuntuacion() {
+	jQuery.noConflict();
+	$("#final").modal('show');
 }
 
 function finalizar(){
@@ -108,7 +130,6 @@ function finalizar(){
 		url: "../script/php/actualizarPuntuacion.php",
 		method: "POST",
 		success: function(data){
-			alert("Tu puntuacion ha sido de "+puntuacion);
 			window.location.replace("mapa.php");
 	}});
 }
