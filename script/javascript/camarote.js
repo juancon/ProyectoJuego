@@ -1,11 +1,21 @@
 var puntuacion = 0;
 var clock = 30; // Obtener la fecha y almacenar en clock
 var objetos = new Array();
+controlCierre = 0;
 for (var i = 0; i < 4;i ++){
 	objetos[i]=false;
 }
 $(document).ready(function() {
-	tiempo();
+	mostrarHistoria();
+	$(".cerrarHistoria").click(function () {
+		if(controlCierre == 0){
+			controlCierre++;
+			tiempo();
+		}
+	});
+	$(".close").click(function () {
+		finalizar();
+	});
 	$("div.col-md-9 div").click(function(e) {
 
 		$(this).css("opacity", "0.5");
@@ -76,6 +86,11 @@ $(document).ready(function() {
 
 });
 
+function mostrarHistoria(){
+	$("#historia").modal('show');
+	
+}
+
 function tiempo() {
 	var intervalo = window.setInterval(mostrar_hora, 1000); // Frecuencia de actualización
 	function mostrar_hora(){
@@ -107,7 +122,14 @@ function puntos(){
 		}
 	}
 
-	finalizar();
+	mostrarPuntuacion();
+}
+
+function mostrarPuntuacion() {
+	//jQuery.noConflict();
+	$("#puntuacionFinal").text(puntuacion+" puntos.");
+
+	$("#final").modal('show');
 }
 
 function finalizar(){
@@ -120,7 +142,6 @@ function finalizar(){
 		url: "../script/php/actualizarPuntuacion.php",
 		method: "POST",
 		success: function(data){
-			alert("Tu puntuacion ha sido de "+puntuacion);
 			window.location.replace("mapa.php");
 	}});
 }
