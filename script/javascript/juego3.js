@@ -2,6 +2,7 @@ var reloj=240;
 var contador=reloj;
 var intervalo;
 var puntuacion;
+var comodin;
 function tiempo(){
 	intervalo=window.setInterval(mostrar_hora,1000);
 	function mostrar_hora(){
