@@ -2,20 +2,26 @@ var puntuacion = 0;
 var clock = 30; // Obtener la fecha y almacenar en clock
 var objetos = new Array();
 controlCierre = 0;
+
 for (var i = 0; i < 4;i ++){
 	objetos[i]=false;
 }
+
 $(document).ready(function() {
+
 	mostrarHistoria();
+	
 	$(".cerrarHistoria").click(function () {
 		if(controlCierre == 0){
 			controlCierre++;
 			tiempo();
 		}
 	});
+
 	$(".close").click(function () {
 		finalizar();
 	});
+	
 	$("div.col-md-9 div").click(function(e) {
 
 		$(this).css("opacity", "0.5");
@@ -88,7 +94,6 @@ $(document).ready(function() {
 
 function mostrarHistoria(){
 	$("#historia").modal('show');
-	
 }
 
 function tiempo() {
@@ -98,6 +103,10 @@ function tiempo() {
 			$("#tiempo").text("Tiempo: "+clock--);
 		}else{
 			puntos();
+			/* Le pongo este clearInterval porque quiero que cuando salga la ventana
+			modal con la puntuación, se pare el tiempo, para que el usuario sepa en cuanto
+			tiempo hizo la prueba */
+			// clearInterval(intervalo);
 		}
 	}
 }
@@ -120,6 +129,20 @@ function puntos(){
 		if(objetos[i] == true){
 			puntuacion += 50;
 		}
+	}
+
+	/* Estructura if para añadir más puntuación en función del tiempo
+	en el que el usuario haya resuelto el juego */
+	if (clock > 25) {
+		puntuacion += 100;
+	} else if (clock < 25 && clock > 20) {
+		puntuacion += 70;
+	} else if (clock < 20 && clock > 15) {
+		puntuacion += 50;
+	} else if (clock < 15 && clock > 10) {
+		puntuacion += 30;
+	} else if (clock < 10 && clock > 5) {
+		puntuacion += 20;
 	}
 
 	mostrarPuntuacion();

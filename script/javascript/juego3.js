@@ -3,11 +3,12 @@ var contador=reloj;
 var intervalo;
 var puntuacion;
 var comodin;
+
 function tiempo(){
 	intervalo=window.setInterval(mostrar_hora,1000);
 	function mostrar_hora(){
 		if (reloj > 0) {
-			$("#tiempo").text("Tiempo: Tienes "+reloj-- +" segundos");
+			$("#tiempo").text("Tiempo: "+reloj-- +" segundos");
 		}else if(reloj==0){
 			$("#tiempo").text("Juego terminado");
 		}
@@ -15,6 +16,9 @@ function tiempo(){
 }
 
 $(document).ready(function(){
+	/* Le he añadido esta línea para que se abra la ventana modal
+	nada más que se inicia la página pero no se abre */
+	$("#historia").modal('show');
 	tiempo();
 	$("#foto").click(function(){
 		puntuacion=contador*5;
