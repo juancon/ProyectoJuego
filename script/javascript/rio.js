@@ -2,8 +2,7 @@ var index = 0;
 var puntuacion = 0;
 controlCierre = 0;
 var clock = 40; // Obtener la fecha y almacenar en clock
-$(document).ready(function (argument) {
-	//start();
+$(document).ready(function () {
 	mostrarHistoria();
 	pintar();
 	$(".info").hide();
@@ -81,50 +80,45 @@ function pintarRespuestas(numero,preguntas){
 }
 
 function comprobar(respuesta,div) {
-	$.ajax({url: "../script/php/obtenerPreguntas.php", success: function(data){
-		var preguntas = JSON.parse(data);
-		// alert(event.text);
-		/*alert(respuesta);
-		alert(preguntas[index-1].correcta)*/
-		if(respuesta == preguntas[index].correcta){
-			console.log("bien");
-			puntuacion = puntuacion+(clock*5);
-			if(index < 2){
-				index++;
-				$("#bien").show();
-				$("#puntuacion").text("Puntuacion: "+puntuacion)
-				clock = 40;
-				pintar();
+	if(respuesta != "mal"){
+		$.ajax({url: "../script/php/obtenerPreguntas.php", success: function(data){
+			var preguntas = JSON.parse(data);
+			if(respuesta == preguntas[index].correcta){
+				puntuacion = puntuacion+(clock*5);
+				if(index < 2){
+					index++;
+					$("#bien").show();
+					$("#puntuacion").text("Puntuacion: "+puntuacion)
+					clock = 40;
+					pintar();
+				}else{
+					$("#mal").hide();
+					$("#bien").show();
+					clock = 0;
+					$("#puntuacion").text("Puntuacion: "+puntuacion);
+					$("#puntuacionFinal").text(puntuacion+" puntos.");
+				}
 			}else{
-				$("#bien").show();
-				clock = 0;
-				$("#puntuacion").text("Puntuacion: "+puntuacion);
-				$("#puntuacionFinal").text(puntuacion+" puntos.");
-				//mostrarPuntuacion();
+				if(index < 2){
+					index++;
+					$("#mal").show();
+					clock = 40;
+					pintar();
+				}else{
+					$("#bien").hide();
+					$("#mal").show();
+					$("#tiempo").text("Tiempo: 0");
+					clock = 0;
+					$("#puntuacionFinal").text(puntuacion+" puntos.");
+				}
 			}
-		}else{
-			console.log("mal")
-			if(index < 2){
-				index++;
-				$("#mal").show();
-				clock = 40;
-				pintar();
-			}else{
-				$("#mal").show();
-				$("#tiempo").text("Tiempo: 0");
-				clock = 0;
-				$("#puntuacionFinal").text(puntuacion+" puntos.");
-				//mostrarPuntuacion();
-			}
-		}
-	}});
+		}});
 
-	if(index > 1){
-		mostrarPuntuacion();
+		if(index > 1 && respuesta != "mal"){
+			mostrarPuntuacion();
+		}
+		
 	}
-}
-function redi() {
-	
 }
 
 function mostrarPuntuacion() {
@@ -142,6 +136,6 @@ function finalizar(){
 		url: "../script/php/actualizarPuntuacion.php",
 		method: "POST",
 		success: function(data){
-			window.location.replace("mapa.php");
+			window.location.replace("mapa.html");
 	}});
 }

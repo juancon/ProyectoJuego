@@ -165,6 +165,6 @@ function finalizar(){
 		url: "../script/php/actualizarPuntuacion.php",
 		method: "POST",
 		success: function(data){
-			window.location.replace("mapa.php");
+			window.location.replace("mapa.html");
 	}});
 }
