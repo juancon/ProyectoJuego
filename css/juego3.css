@@ -4,6 +4,9 @@
 	margin-left: 5%;
 	margin-right: 5%;
 }*/
+body{
+	overflow: hidden;
+}
 #foto{
 	position: absolute;
 	opacity: 0.5;
@@ -14,54 +17,71 @@
 	height: 35px;
 	background-color: black;
 	}
+#ocultar{
+	position: absolute;
+	width: 763px;
+	height: 794px;
+	left: 44%;
+	top: 0%;
+	background-color: black; 
+}
+#ocultar2{
+	position: absolute;
+	width: 763px;
+	height: 400px;
+	left: 1%;
+	top: 0%;
+	background-color: black; 
+	
+}
 /*Tablet*/
 @media screen and (max-width: 992px) {
 	#foto{
 		top: 53%;
 		left: 7%;
 	}
+	#ocultar{
+	position: absolute;
+	width: 330px;
+	height: 340px;
+	left: 44%;
+	top: 0%;
+	background-color: blue;
+}
+#ocultar2{
+	position: absolute;
+	width: 257px;
+	height: 180px;
+	left: 2%;
+	top: 0%;
+	background-color: blue;
+}
 }
 
 /*movil pequeño */
 @media screen and (max-width: 600px) {
- 
+#ocultar,#ocultar2{
+	background-color: green;
+}
 #foto{
-	top: 53%;
+	top: 47%;
 	left: 6%;
 	}
 }
 
 @media screen and (max-width: 400px) {
- 
+#ocultar,#ocultar2{
+	background-color: yellow;
+}
 #foto{
-	top: 52%;
+	top: 48%;
 	left: 10%;
 	width: 15px;
 	height: 15px;
 	}
 }
 
-/*@media screen and (max-width: 992px) {
-  #foto{
 
-	top: 27%;
-	left: 7%;
-	}
-}
-
-@media screen and (max-width: 600px) {
-  #foto{
-	top: 27%;
-	left: 7%;
-	}
-}
-
-@media screen and (max-width: 400px) {
-  #foto{
-	top: 27%;
-	left: 7%;
-	}
-}*/
 
 
 
