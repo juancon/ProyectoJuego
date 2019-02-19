@@ -10,8 +10,6 @@ for (var i = 0; i < 4;i ++){
 
 $(document).ready(function() {
 
-	alert("Adiós");
-
 	mostrarHistoria();
 	
 	$(".cerrarHistoria").click(function () {
@@ -21,7 +19,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$(".close").click(function () {
+	$(".acabar").click(function () {
 		finalizar();
 	});
 	
