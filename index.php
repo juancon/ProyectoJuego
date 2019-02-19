@@ -10,7 +10,6 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src=""></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
-
 </head>
 <body>
 
@@ -32,14 +31,36 @@
             echo "El usuario ya existe";
           }
         ?>
-      </p class="rojo">
+      </p>
       <!-- <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon"/> -->
     </div>
 
     <!-- Login Form -->
     <form action="script/php/iniciarSesion.php" method="post">
-      <input type="text" id="nombre" class="fadeIn second" name="nombre" placeholder="Nombre" required>
-      <input type="text" id="apellido" class="fadeIn second" name="apellido" placeholder="Apellido" required>
+      <input type="text" id="nombre" class="fadeIn second" name="nombre" placeholder="Nombre" required value="<?php echo $_POST['nombre']?>">
+      <div class="nombre rojo">
+        <?php
+          if (isset($_GET["nombre"])) {
+            if ($_GET["nombre"] == "1") {
+              echo "<p>La longitud del nombre debe ser mayor o igual a 3</p>";
+            } else if ($_GET["nombre"] == "2") {
+              echo "<p>La longitud del nombre debe ser menor o igual a 20</p>";
+            }
+          }
+        ?>
+      </div>
+      <input type="text" id="apellido" class="fadeIn second" name="apellido" placeholder="Apellido" required value="<?php echo $_POST['apellido']?>">
+      <div class="apellido rojo">
+        <?php
+          if (isset($_GET["apellido"])) {
+            if ($_GET["apellido"] == "1") {
+              echo "<p>La longitud del apellido debe ser mayor o igual a 3</p>";
+            } else if ($_GET["apellido"] == "2") {
+              echo "<p>La longitud del apellido debe ser menor o igual a 20</p>";
+            }
+          }
+        ?>
+      </div>
       <select id="curso" class="fadeIn second" name="curso" required>
         <option value="1ESO">1º ESO</option>
         <option value="1BACH">1º BACH</option>
