@@ -7,7 +7,7 @@
 			header("location: ../../index.php?nombre=1&apellido=1");
 			exit();
 		}
-		header("location: ../../index.php?nombre=1");
+		header("location: ../../index.php?nombre=20");
 		exit();
 	}
 
