@@ -19,6 +19,7 @@
   <link rel="stylesheet" type="text/css" href="../css/estilosComun.css">
   <link rel="stylesheet" type="text/css" href="../css/mapa.css">
   <script type="text/javascript" src="../script/javascript/ranking.js"></script>
+  <script type="text/javascript" src="../script/javascript/mapa.js"></script>
   
   
 
