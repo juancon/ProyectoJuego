@@ -1,8 +1,10 @@
-var reloj=240;
-var contador=reloj;
+var tiempoMaximo = 240
+var reloj=tiempoMaximo;
 var intervalo;
 var puntuacion;
-var comodin;
+var comodin1=false;
+var comodin2=false;
+controlCierre = 0;
 
 function tiempo(){
 	intervalo=window.setInterval(mostrar_hora,1000);
@@ -17,16 +19,57 @@ function tiempo(){
 
 $(document).ready(function(){
 	/* Le he añadido esta línea para que se abra la ventana modal
-	nada más que se inicia la página pero no se abre */
+	nada más que se inicia la página pero no se abre */ 
 	$("#historia").modal('show');
-	tiempo();
+	$(".cerrarHistoria").click(function() {
+		if(controlCierre == 0){
+			controlCierre++;
+			inicio();
+		}
+	});
 	$("#foto").click(function(){
-		puntuacion=contador*5;
-		alert("Has encontrado a wally!!"+puntuacion);
+		if(reloj>0){
+			puntuacion = reloj*15;
+			$("#puntuacionFinal").text(puntuacion+" puntos.");
+			mostrarPuntuacion();
+			reloj=0;
+		}
+	});
+
+	$(".acabar").click(function () {
 		finalizar();
-		reloj=0;
+	});
+	
+	$("#comodin1").click(function(){
+		if(!comodin1){
+			$("#ocultar").css("background-color","#363434");
+			$("#imgComodin1").attr("src","../img/up2.webp");
+			restaPuntos(1);
+			comodin1 = true;
+		}
+	});
+	$("#comodin2").click(function(){
+		if(!comodin2 && comodin1){
+			$("#ocultar2").css("background-color","#363434");
+			$("#imgComodin2").attr("src","../img/up2.webp");
+			restaPuntos(2);
+			comodin2 = true;
+		}
 	});
 });
+
+function restaPuntos(num){
+	if(num == 1){
+		reloj = reloj - 50;
+	}else if(num == 2){
+		reloj = reloj - 70;
+	}
+}
+
+function inicio() {
+	tiempo();
+	
+}
 
 function finalizar(){
 	var parametros = {
@@ -38,9 +81,13 @@ function finalizar(){
 		url: "../script/php/actualizarPuntuacion.php",
 		method: "POST",
 		success: function(data){
-			alert("Tu puntuacion ha sido de "+puntuacion);
 			window.location.replace("mapa.html");
 	}});
 }
 
+
+function mostrarPuntuacion() {
+	//jQuery.noConflict();
+	$("#final").modal('show');
+}
 

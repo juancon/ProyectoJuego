@@ -18,6 +18,28 @@
 
 </head>
 <body>
+  <div class="modal fade" id="final">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <h5 class="modal-title" >Puntuacion</h5>
+          <button type="button" class="close acabar" data-dismiss="modal">
+            <span aria-hidden="true">X</span>
+          </button>
+
+        </div>
+        <div class="modal-body">
+          <div id="puntuacionFinal"></div>
+        </div>
+        <div class="modal-footer">
+          <div class="close btn btn-primary acabar" data-dismiss="modal">
+            Cerrar
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="modal fade" id="historia">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -43,21 +65,28 @@
       </div>
     </div>
 
-	<header class="container-fluid">
-		<nav class="navbar">
-			<div class="btn" data-toggle="modal" data-target="#historia"><img src="../img/scroll.png" alt="Historia" title="Historia" width="50px" height="50px" class="iconosNav"></div>
+  <header class="container-fluid">
+    <nav class="navbar">
+      <div class="btn" data-toggle="modal" data-target="#historia">
+        <img src="../img/scroll.png" alt="Historia" title="Historia" width="50px" height="50px" class="iconosNav">
+      </div>
+      <div>
+        <div class="btn" id="comodin1"><img id="imgComodin1" src="../img/up.webp" alt="comodin" title="Comodin" width="50px" height="50px" class="iconosNav"></div>
+        <div class="btn" id="comodin2"><img id="imgComodin2" src="../img/up.webp" alt="comodin" title="Comodin" width="50px" height="50px" class="iconosNav"></div>
+      </div>
       <div id="tiempo"></div>
       <div id="puntuacion">Puntuacion: 0</div>
       <a href="../script/php/cerrarSesion.php"><img src="../img/salir.png" alt="Cerrar sesion" title="Cerrar sesión" width="50px" height="50px" class="iconosNav"></a>
     </nav>
-	</header>
+  </header>
   <main class="container-fluid">
   <section class="row justify-content-center">
     <div class="col-md-9">
          <img class="w-100 d-block"src="../img/fotowally.jpg"> 
-         <div id="foto">
-         </div>
-    </div>
+         <div id="foto"></div>
+         <div id="ocultar"></div>
+         <div id="ocultar2"></div>
+   </div>
   </section>
   </main>
 </body>
