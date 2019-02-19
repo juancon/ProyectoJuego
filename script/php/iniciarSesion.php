@@ -10,7 +10,7 @@
 		$usuario = new Usuario($nombre,$curso,0,0);
 		$usuario->insert();
 		$_SESSION['usuario'] = serialize($usuario);
-		header("location: ../../content/mapa.php");
+		header("location: ../../content/mapa.html");
 	}else{
 		header("location: ../../index.php?usuario=1");
 	}

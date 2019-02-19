@@ -39,7 +39,7 @@ function finalizar(){
 		method: "POST",
 		success: function(data){
 			alert("Tu puntuacion ha sido de "+puntuacion);
-			window.location.replace("mapa.php");
+			window.location.replace("mapa.html");
 	}});
 }
 
