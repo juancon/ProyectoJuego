@@ -1,13 +1,16 @@
 var puntuacion = 0;
-var clock = 30; // Obtener la fecha y almacenar en clock
+var clock = 45; // Obtener la fecha y almacenar en clock
 var objetos = new Array();
 controlCierre = 0;
+var intervalo = "";
 
 for (var i = 0; i < 4;i ++){
 	objetos[i]=false;
 }
 
 $(document).ready(function() {
+
+	alert("Adiós");
 
 	mostrarHistoria();
 	
@@ -97,16 +100,14 @@ function mostrarHistoria(){
 }
 
 function tiempo() {
-	var intervalo = window.setInterval(mostrar_hora, 1000); // Frecuencia de actualización
+	
+	intervalo = window.setInterval(mostrar_hora, 1000); // Frecuencia de actualización
+
 	function mostrar_hora(){
 		if(clock > 0){
 			$("#tiempo").text("Tiempo: "+clock--);
 		}else{
 			puntos();
-			/* Le pongo este clearInterval porque quiero que cuando salga la ventana
-			modal con la puntuación, se pare el tiempo, para que el usuario sepa en cuanto
-			tiempo hizo la prueba */
-			// clearInterval(intervalo);
 		}
 	}
 }
@@ -115,34 +116,35 @@ function comprobar() {
 	var control = 0;
 	for (var i = 0; i < objetos.length ; i++){
 		if(objetos[i] == true){
-			control += 50;
+			control += 500;
 		}
 	}
 
-	if(control == 200){
+	if(control == 2000){
 		puntos();
+		var parar = window.clearInterval(intervalo);
 	}
 }
 
 function puntos(){
 	for (var i = 0; i < objetos.length ; i++){
 		if(objetos[i] == true){
-			puntuacion += 50;
+			puntuacion += 500;
 		}
 	}
 
 	/* Estructura if para añadir más puntuación en función del tiempo
 	en el que el usuario haya resuelto el juego */
-	if (clock > 25) {
-		puntuacion += 100;
-	} else if (clock < 25 && clock > 20) {
-		puntuacion += 70;
-	} else if (clock < 20 && clock > 15) {
-		puntuacion += 50;
-	} else if (clock < 15 && clock > 10) {
-		puntuacion += 30;
-	} else if (clock < 10 && clock > 5) {
-		puntuacion += 20;
+	if (clock >= 38) {
+		puntuacion += 1000;
+	} else if (clock < 38 && clock >= 30) {
+		puntuacion += 700;
+	} else if (clock < 30 && clock >= 20) {
+		puntuacion += 500;
+	} else if (clock < 20 && clock >= 10) {
+		puntuacion += 300;
+	} else if (clock < 10 && clock >= 5) {
+		puntuacion += 200;
 	}
 
 	mostrarPuntuacion();
