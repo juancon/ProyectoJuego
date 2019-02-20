@@ -1,5 +1,8 @@
 /* BASIC */
-
+@font-face {
+  font-family: "handwriting";
+  src: url(../font/handwriting.ttf);
+}
 body {
   background: url("https://2.bp.blogspot.com/-NhnE6BjsOB4/WGQIXTwl41I/AAAAAAAABXE/SHz63eg2-O8mL6pCKWC_djjsrB9Tmn3rACLcB/s1600/50398.jpg") no-repeat center top ;
 
@@ -11,6 +14,7 @@ body {
 }
 h1{
   color: #fb6402;
+  font-family: "handwriting";
 }
 
 a {
