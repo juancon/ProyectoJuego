@@ -12,7 +12,7 @@ $(document).ready(function () {
 			inicio();
 		}
 	});
-	$(".close").click(function () {
+	$(".acabar").click(function () {
 		finalizar();
 	});
 	$("#respuestas div").click(function () {

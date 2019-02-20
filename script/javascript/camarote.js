@@ -1,5 +1,5 @@
 var puntuacion = 0;
-var clock = 30; // Obtener la fecha y almacenar en clock
+var clock = 45; // Obtener la fecha y almacenar en clock
 var objetos = new Array();
 controlCierre = 0;
 
@@ -8,9 +8,9 @@ for (var i = 0; i < 4;i ++){
 }
 
 $(document).ready(function() {
-
+	//mostramos la ventana modal de historia
 	mostrarHistoria();
-	
+	//añadimos el evento clic a los botones de cierre de la ventana
 	$(".cerrarHistoria").click(function () {
 		if(controlCierre == 0){
 			controlCierre++;
@@ -18,7 +18,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$(".close").click(function () {
+	$(".acabar").click(function () {
 		finalizar();
 	});
 	
