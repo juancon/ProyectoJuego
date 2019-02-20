@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>El Camarote Misterioso</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../css/estilosComun.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilosCamarotes.css">
+    <script src="../script/javascript/camarote.js"></script>
+    <!-- Icon -->
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+
+    <div class="modal fade" id="historia">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+
+            <h5 class="modal-title">Historia</h5>
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true" class="cerrarHistoria">X</span>
+            </button>
+
+          </div>
+          <div class="modal-body">
+            <p>La expedición de Magallanes y Elcano llega a Sudamérica, concretamente al Río de la Plata, Argentina.<p>
+            <p>La expedición ya lleva mucho tiempo viajando y a medida que pasa el tiempo necesitan objetos necesarios para vivir y continuar un camino que pasaría a la historia.</p>
+            <p>Por suerte, encuentran un barco abandonado, quizás de alguien que intentó lo que ellos. Deciden entrar en el barco para ver que encuentran y ven un camarote, a medida que se acercan huele fatal, ¿que habrá allí?</p>
+            <p>Sólo tendrás 45 segundos para encontrar los 4 objetos marcados arriba, haz click cuando lo encuentres y ayudarás a la expedición a seguir su largo y duro camino. ¡Ánimo!</p>
+          </div>
+          <div class="modal-footer">
+            <div class="btn btn-primary cerrarHistoria" data-dismiss="modal">
+              Cerrar
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="final">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+
+            <h5 class="modal-title">Puntuacion</h5>
+            <button type="button" class="close acabar" data-dismiss="modal">
+              <span aria-hidden="true">X</span>
+            </button>
+
+          </div>
+          <div class="modal-body">
+            <div id="puntuacionFinal"></div>
+          </div>
+          <div class="modal-footer">
+            <div class="close btn btn-primary acabar" data-dismiss="modal">
+              Cerrar
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  	<header class="container-fluid">
+      <nav class="navbar">
+        <a class="navbar-brand">Objetos a encontrar:</a>    
+          <div class="breadcrumb-item" id="itemBolsa">Bolsa morada</div>
+        <div class="breadcrumb-item" id="itemEstrella">Estrella de mar</div>
+        <div class="breadcrumb-item" id="itemBotella">Botella verde</div>
+        <div class="breadcrumb-item" id="itemSeta">Seta</div>
+        <p id="tiempo" class="ml-5 mr-5">Tiempo: 45</p>
+        <div class="btn" data-toggle="modal" data-target="#historia"><img src="../img/scroll.png" alt="Historia" title="Historia" width="50px" height="50px" class="iconosNav"></div>
+        <a href="../script/php/cerrarSesion.php"><img src="../img/salir.png" alt="Cerrar sesion" title="Cerrar sesión" width="50px" height="50px" class="iconosNav"></a>
+      </nav>
+    </header>
+    <section class="container">
+      <article class="row">
+        <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+                <section class="row justify-content-center mt-5">
+                  <div class="col-md-9">
+                    <!-- Objetos -->
+                    <div id="bolsa" class="d-block"></div>
+                    <div id="estrella" class="d-block"></div>
+                    <div id="botella" class="d-block"></div>
+                    <div id="seta" class="d-block"></div>
+
+                    <!-- Imágen del camarote -->
+                    <img class="w-100 d-block" src="../img/imagen_camarote_2.jpg">
+                  </div>
+                </section>
+        </div>
+      </article>
+    </section>
+  </body>
+</html>

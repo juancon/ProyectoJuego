@@ -1,0 +1,44 @@
+
+.fondo{
+	/*min-width: 1150px;
+	max-height: 650px;*/
+	position: absolute;
+	z-index: -9999;
+	/*top: 0px;*/
+
+}
+#pregunta{
+	color: white;
+	position: relative;
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 25%;
+	font-size: 2.5em;
+}
+
+#respuestas{
+	position: relative;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.respuesta{
+	background-color: rgba(200, 190, 190, 0.8);
+	font-weight: bold;
+	cursor: pointer;
+	color: white;
+	text-align: center;
+	border: white solid 4px;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 1.2em;
+}
+
+.info{
+	position: absolute;
+	min-width: 250px;
+	max-height: 250px;
+}
+
+

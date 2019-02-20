@@ -1,0 +1,106 @@
+/* pantalla */
+/*section{
+	z-index: -1;
+	margin-left: 5%;
+	margin-right: 5%;
+}*/
+
+/*body{*/
+/*	overflow: hidden;*/
+/*}*/
+
+#foto {
+	position: absolute;
+	opacity: 0;
+	top: 55%;
+	left: 7%;
+	width: 35px;
+	height: 35px;
+	background-color: black;
+}
+
+div#ocultar {
+	position: absolute;
+	left: 57%;
+	top: 0%;
+	width: 600px;
+	height: 800px;
+	/*background-color: #363434;*/
+}
+
+div#ocultar2 {
+	position: absolute;
+	left: 1%;
+	top: 0%;
+	width: 800px;
+	height: 300px;
+	/*background-color: #363434;*/
+}
+
+/*Tablet*/
+@media screen and (max-width: 992px) {
+	#foto {
+		top: 53%;
+		left: 7%;
+	}
+
+	div#ocultar {
+		height: 410px;
+		width: 292px;
+		left: 60%;
+	}
+
+	div#ocultar2 {
+		height: 170px;
+		width: 450px;
+		left: 2%;
+	}
+}
+
+/*movil pequeño */
+@media screen and (max-width: 600px) {
+	#foto {
+		top: 55%;
+		left: 8%;
+		width: 20px;
+		height: 20px;
+	}
+
+	div#ocultar {
+		height: 420px;
+		width: 310px;
+		left: 60%;
+	}
+
+	div#ocultar2 {
+		height: 100px;
+		width: 410px;
+		left: 2%;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	#foto{
+		top: 52%;
+		left: 10%;
+		width: 15px;
+		height: 15px;
+	}
+
+	div#ocultar {
+		height: 400px;
+		width: 310px;
+		left: 60%;
+	}
+
+	div#ocultar2 {
+		height: 70px;
+		width: 410px;
+		left: 2%;
+	}
+}
+
+
+
+
+
