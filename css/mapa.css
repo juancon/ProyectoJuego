@@ -1,0 +1,47 @@
+#imgFondo{
+  position: absolute;
+  z-index: -9999;
+  width: 100%;
+}
+
+#minijuego1,#minijuego2,#minijuego3{
+  cursor: pointer;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: rgba(0,0,0,0);
+}
+#minijuego1{
+  margin-top: 20%;
+  left: 45%;
+}
+
+#minijuego2{
+  margin-top: 40%;
+  left: 33%;
+}
+#minijuego3{
+  margin-top: 28%;
+  left: 78%;
+}
+
+@media screen and (max-width: 992px) {
+  #minijuego1,#minijuego2,#minijuego3 {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #minijuego1,#minijuego2,#minijuego3 {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #minijuego1,#minijuego2,#minijuego3 {
+    width: 10px;
+    height: 10px;
+  }
+}
