@@ -29,63 +29,71 @@ $(document).ready(function() {
 
 		switch(e.target.id) {
 			case "estrella":
-		    	objetos[0] = true;
-		    	$("#itemEstrella").animate({
-		    		bottom: "15px",
-		    	}, function() {
-		    		$(this).animate({
-		    			top: "0px"
-		    		}).css({
-		    			"color": "green",
-		    			"font-size": "20px"
-		    		});
-		    	});
-		    	comprobar();
+			    if(!objetos[0]){
+    		    	objetos[0] = true;
+    		    	$("#itemEstrella").animate({
+    		    		bottom: "15px",
+    		    	}, function() {
+    		    		$(this).animate({
+    		    			top: "0px"
+    		    		}).css({
+    		    			"color": "green",
+    		    			"font-size": "20px"
+    		    		});
+    		    	});
+    		    	comprobar();
+		        }
 			break;
 
 			case "botella":
-		    	objetos[1] = true;
-	    		$("#itemBotella").animate({
-		    		bottom: "15px",
-	    		}, function() {
-		    		$(this).animate({
-		    			top: "0px"
-		    		}).css({
-		    			"color": "green",
-		    			"font-size": "20px"
-		    		});
-		    	});
-	    		comprobar();
+			    if(!objetos[1]){
+    		    	objetos[1] = true;
+    	    		$("#itemBotella").animate({
+    		    		bottom: "15px",
+    	    		}, function() {
+    		    		$(this).animate({
+    		    			top: "0px"
+    		    		}).css({
+    		    			"color": "green",
+    		    			"font-size": "20px"
+    		    		});
+    		    	});
+    	    		comprobar();
+			    }
 			break;
 
 			case "seta":
-		    	objetos[2] = true;
-		    	$("#itemSeta").animate({
-		    		bottom: "15px",
-		    	}, function() {
-		    		$(this).animate({
-		    			top: "0px"
-		    		}).css({
-		    			"color": "green",
-		    			"font-size": "20px"
-		    		});
-		    	});
-		    	comprobar();
+			    if(!objetos[2]){
+    		    	objetos[2] = true;
+    		    	$("#itemSeta").animate({
+    		    		bottom: "15px",
+    		    	}, function() {
+    		    		$(this).animate({
+    		    			top: "0px"
+    		    		}).css({
+    		    			"color": "green",
+    		    			"font-size": "20px"
+    		    		});
+    		    	});
+    		    	comprobar();
+			    }
 			break;
 
 			case "bolsa":
-		    	objetos[3] = true;
-		    	$("#itemBolsa").animate({
-		    		bottom: "15px",
-		    	}, function() {
-		    		$(this).animate({
-		    			top: "0px"
-		    		}).css({
-		    			"color": "green",
-		    			"font-size": "20px"
-		    		});
-		    	});
-		    	comprobar();
+			    if(!objetos[3]){
+    		    	objetos[3] = true;
+    		    	$("#itemBolsa").animate({
+    		    		bottom: "15px",
+    		    	}, function() {
+    		    		$(this).animate({
+    		    			top: "0px"
+    		    		}).css({
+    		    			"color": "green",
+    		    			"font-size": "20px"
+    		    		});
+    		    	});
+    		    	comprobar();
+			    }
 			break;
 		}
 
@@ -153,6 +161,7 @@ function mostrarPuntuacion() {
 	$("#puntuacionFinal").text(puntuacion+" puntos.");
 
 	$("#final").modal('show');
+	setTimeout(function(){ finalizar(); }, 10000);
 }
 
 function finalizar(){

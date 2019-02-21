@@ -87,5 +87,6 @@ function finalizar(){
 function mostrarPuntuacion() {
 	//jQuery.noConflict();
 	$("#final").modal('show');
+	setTimeout(function(){finalizar()},10000);
 }
 

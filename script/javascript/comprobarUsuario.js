@@ -1,8 +1,10 @@
 $(document).ready(function() {
+    
+    $("input[type='text']").blur(validar);
 
-	$("input[type='text']").blur(function() {
+    function validar() {
 
-		var atributoNombre = $(this).attr("name");
+        var atributoNombre = $(this).attr("name");
 		var valor = $(this).val();
 		var longitud = $(this).val().length;
 
@@ -30,6 +32,6 @@ $(document).ready(function() {
 
 		}
 
-	});
+    }
 
 });
