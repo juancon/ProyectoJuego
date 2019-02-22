@@ -29,11 +29,8 @@ Las tecnologías que se han usado son las siguientes:
 	- Bootstrap para la maquetación y diseño responsive.
 	- PHP para la parte de modelo y conexión a la base de datos.
 	- JQuery para manejar el DOM, construir la lógica y hacer los efectos y animaciones.
+	- Ajax para la comunicación entre Javascript y PHP
 
 ¿CÓMO PUEDO JUGAR?
 
 El juego se encuentra alojado en un hosting con la siguiente dirección URL: https://elviajedemagallanes.000webhostapp.com/
-
-¿CÓMO PUEDES VER EL CÓDIGO?
-
-Si tienes alguna duda o curiosidad, puedes hacer un “git clone” del proyecto de la siguiente manera: git clone https://github.com/juancon/ProyectoJuego.git
